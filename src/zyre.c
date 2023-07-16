@@ -55,6 +55,10 @@
 
 #include "zyre_classes.h"
 
+#ifndef freen
+#define freen(x) do {free(x); x = NULL;} while(0)
+#endif // freen
+
 //  --------------------------------------------------------------------------
 //  Structure of our class
 

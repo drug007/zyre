@@ -5,10 +5,6 @@
 #include <string>
 #include <functional>
 
-#ifndef freen
-#define freen(x) do {free(x); x = NULL;} while(0)
-#endif // freen
-
 namespace zink
 {
 
