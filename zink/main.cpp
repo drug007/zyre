@@ -52,7 +52,17 @@ main (int argc, char *argv [])
         buf [strlen (&buf[0]) - 1] = 0;     // Drop the trailing linefeed
 
         char *routeId = strtok(&buf[0], " ,.");
+        if (!routeId || strlen (routeId) == 0)
+        {
+            printf ("Wrong route id\n");
+            continue;
+        }
         char *routeContent = routeId + strlen (routeId) + 1;
+        if (!routeContent || strlen (routeContent) == 0)
+        {
+            printf ("Wrong route content\n");
+            continue;
+        }
 
         if (streq (routeContent, "test route"))
             routeContent = const_cast<char*>(testRouteContent);
